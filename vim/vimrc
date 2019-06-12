@@ -1,0 +1,47 @@
+" Leader Key
+let mapleader = "\<Space>"
+
+
+" Custom Key Mappings
+" ===================
+
+" 0 moves cursor to first word in line instead of bol
+nmap 0 ^
+
+" Map Ctrl-s to write the file
+nmap <C-s> :w<cr>
+imap <C-s> <esc>:w<cr>
+
+" Split edit your vimrc. Type space, v, r in sequence to trigger
+nmap <leader>vr :sp $MYVIMRC<cr>
+
+" Source (reload) your vimrc. Type space, s, o in sequence to trigger
+nmap <leader>so :source $MYVIMRC<cr>
+
+" Escape from insert mode
+imap jk <esc>
+imap kj <esc>
+
+" Copy the entire buffer into the system register
+nmap <leader>co ggVG*y
+
+" Move up and down by visible lines if current line is wrapped
+nmap j gj
+nmap k gk
+
+
+" Setting Options
+" ===============
+set number                      " Display line numbers beside buffer
+set nocompatible                " Don't maintain compatibilty with Vi.
+set hidden                      " Allow buffer change w/o saving
+set lazyredraw                  " Don't update while executing macros
+set backspace=indent,eol,start  " Sane backspace behavior
+set history=1000                " Remember last 1000 commands
+set scrolloff=4                 " Keep at least 4 lines below cursor
+
+" Autocommands
+" ============
+
+" Bind `q` to close the buffer for help files
+autocmd Filetype help nnoremap <buffer> q :q<CR>
