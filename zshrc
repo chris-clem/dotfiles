@@ -8,7 +8,7 @@ export ZSH="/home/christoph/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME=""
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -97,15 +97,29 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
 
-# Pure: Pretty, minimal and fast ZSH prompt
+# conda
+alias cadd="conda activate deepfake-detection"
+alias caff="conda activate face-forensics"
+
+# Git
+alias gs="git status"
+alias gc="git add . && git commit"
+alias gp="git push"
+
+# Create directory and navigate into it
+mkcd ()
+{
+  mkdir -p -- "$1" && cd -P -- "$1"
+}
+
+
+fpath+=('/usr/local/lib/node_modules/pure-prompt/functions')
 autoload -U promptinit; promptinit
 prompt pure
-
-ZSH_THEME=""
-
-# zsh-syntax-highlighting
-source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
