@@ -9,9 +9,11 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 ```
 
 4. Install pure prompt
-```shell
-npm install --global pure-prompt
+```sh
+mkdir -p "$HOME/.zsh"
+git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
 ```
+
 5. Create simlinks
 ```shell
 ln -s ~/dotfiles/vimrc ~/.vimrc
