@@ -33,9 +33,6 @@ nmap k gk
 " Setting Options
 " ===============
 
-" Display extra whitespace
-set list listchars=tab:»·,trail:·,nbsp:·
-
 " Display relative line numbers, with absolute line number for current line
 set number
 set numberwidth=5
