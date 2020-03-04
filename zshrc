@@ -101,10 +101,6 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-# conda
-alias cadd="conda activate deepfake-detection"
-alias caff="conda activate face-forensics"
-
 # Git
 alias gs="git status"
 alias gc="git add . && git commit"
@@ -129,4 +125,3 @@ function g {
   fi
 }
 
-. /anaconda3/etc/profile.d/conda.sh
