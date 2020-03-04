@@ -18,5 +18,6 @@ git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
 ```shell
 ln -s ~/dotfiles/vimrc ~/.vimrc
 ln -s ~/dotfiles/zshrc ~/.zshrc
+ln -s ~/dotfiles/gitconfig ~/.gitconfig
 source .zshrc
 ```
