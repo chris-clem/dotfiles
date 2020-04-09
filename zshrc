@@ -101,7 +101,7 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-# Git
+# git
 alias gs="git status"
 alias gc="git add . && git commit"
 alias gp="git push"
@@ -112,20 +112,15 @@ mkcd ()
   mkdir -p -- "$1" && cd -P -- "$1"
 }
 
+# pure
 fpath+=$HOME/.zsh/pure
 autoload -U promptinit; promptinit
 prompt pure
-
-compdef g=git
-function g {
-  if [[ $# -gt 0 ]]; then
-    git "$@"
-  else
-    git status --short --branch
-  fi
-}
 
 # pyenv
 export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+# poetry
+export PATH="$HOME/.poetry/bin:$PATH"
