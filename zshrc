@@ -124,3 +124,7 @@ eval "$(pyenv virtualenv-init -)"
 
 # poetry
 export PATH="$HOME/.poetry/bin:$PATH"
+
+# Geant4
+source /opt/geant4.10.06.p01-install/bin/geant4.sh
+
