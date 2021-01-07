@@ -128,3 +128,23 @@ export PATH="$HOME/.poetry/bin:$PATH"
 # Geant4
 source /opt/geant4.10.06.p01-install/bin/geant4.sh
 
+plbclone (){
+    git clone git@github.com:chris-clem/pytorch-lightning-bolts.git
+    cd pytorch-lightning-bolts
+    git remote add upstream https://github.com/PyTorchLightning/pytorch-lightning-bolts.git
+    # This is just here to print out info about your remote upstream/origin
+    git remote -v
+}
+
+plbfetch (){
+    git fetch --all --prune
+    git checkout master
+    git merge upstream/master
+}
+
+# Rebase your branch with upstream's master
+# plrebase <your-branch-name>
+plbrebase (){
+    git checkout $@
+    git rebase master
+}
