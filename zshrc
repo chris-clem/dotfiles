@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+# export 
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/user/.oh-my-zsh"
@@ -32,7 +32,7 @@ ZSH_THEME=""
 # zstyle ':omz:update' frequency 13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS="true"
+DISABLE_MAGIC_FUNCTIONS="true"
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -106,7 +106,12 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
+alias zshconfig="vim ~/.zshrc"
+alias cat="batcat"
+alias ls="exa"
+alias du="dust"
+alias df="duf"
+alias find="fd"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # >>> conda initialize >>>
@@ -129,5 +134,6 @@ fpath+=$HOME/.zsh/pure
 autoload -U promptinit; promptinit
 prompt pure
 
-# Poetry
-export PATH="$HOME/.poetry/bin:$PATH"
+# VIM Command Line
+bindkey -v
+
