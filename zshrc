@@ -114,6 +114,25 @@ alias df="duf"
 alias find="fd"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Pure
+fpath+=$HOME/.zsh/pure
+autoload -U promptinit; promptinit
+prompt pure
+
+# VIM Command Line
+bindkey -v
+
+export PATH="/home/user/.local/bin:$PATH"
+
+prp() {
+    poetry run python "$@"
+}
+
+prsr() {
+    poetry run streamlit run "$@"
+}
+
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/user/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
@@ -128,12 +147,4 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
-# Pure
-fpath+=$HOME/.zsh/pure
-autoload -U promptinit; promptinit
-prompt pure
-
-# VIM Command Line
-bindkey -v
 
