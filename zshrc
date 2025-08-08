@@ -1,11 +1,11 @@
 # If you come from bash you might have to change your $PATH.
-# export 
+# export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
-# Path to your oh-my-zsh installation.
-export ZSH="/home/user/.oh-my-zsh"
+# Path to your Oh My Zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
+# load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME=""
@@ -32,7 +32,7 @@ ZSH_THEME=""
 # zstyle ':omz:update' frequency 13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
-DISABLE_MAGIC_FUNCTIONS="true"
+# DISABLE_MAGIC_FUNCTIONS="true"
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -75,11 +75,10 @@ plugins=(
 	common-aliases
 	dirhistory
 	git
-	thefuck
 	tmux
 	zsh-autosuggestions
 	zsh-syntax-highlighting
-        )
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -94,57 +93,34 @@ source $ZSH/oh-my-zsh.sh
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
 # else
-#   export EDITOR='mvim'
+#   export EDITOR='nvim'
 # fi
 
 # Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+# export ARCHFLAGS="-arch $(uname -m)"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# Set personal aliases, overriding those provided by Oh My Zsh libs,
+# plugins, and themes. Aliases can be placed here, though Oh My Zsh
+# users are encouraged to define aliases within a top-level file in
+# the $ZSH_CUSTOM folder, with .zsh extension. Examples:
+# - $ZSH_CUSTOM/aliases.zsh
+# - $ZSH_CUSTOM/macos.zsh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
 alias zshconfig="vim ~/.zshrc"
-alias cat="batcat"
-alias ls="exa"
 alias du="dust"
 alias df="duf"
-alias find="fd"
+unalias duf
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Pure
-fpath+=$HOME/.zsh/pure
+# pure
+fpath+=($HOME/.zsh/pure)
 autoload -U promptinit; promptinit
 prompt pure
 
 # VIM Command Line
 bindkey -v
 
-export PATH="/home/user/.local/bin:$PATH"
-
-prp() {
-    poetry run python "$@"
-}
-
-prsr() {
-    poetry run streamlit run "$@"
-}
-
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/user/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/user/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/user/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/user/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
+# Pixi
+export PATH="/home/chris/.pixi/bin:$PATH"
