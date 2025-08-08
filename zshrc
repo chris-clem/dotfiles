@@ -123,4 +123,4 @@ prompt pure
 bindkey -v
 
 # Pixi
-export PATH="/home/chris/.pixi/bin:$PATH"
+export PATH="$HOME/.pixi/bin:$PATH"
