@@ -40,6 +40,9 @@ gh auth login
 # Install dust
 pixi global install dust
 
+# Install nvtop
+pixi global install nvtop
+
 # Install duf
 wget https://github.com/muesli/duf/releases/download/v0.8.1/duf_0.8.1_linux_amd64.deb
 sudo apt install ./duf_0.8.1_linux_amd64.deb
