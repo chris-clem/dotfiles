@@ -71,13 +71,10 @@ ZSH_THEME=""
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-	autojump 
-	common-aliases
-	dirhistory
-	git
-	tmux
-	zsh-autosuggestions
-	zsh-syntax-highlighting
+    git
+    tmux
+    zsh-autosuggestions
+    zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -108,19 +105,13 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="vim ~/.zshrc"
-alias du="dust"
-alias df="duf"
-unalias duf
+# alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# pure
+# Pure
 fpath+=($HOME/.zsh/pure)
 autoload -U promptinit; promptinit
 prompt pure
 
-# VIM Command Line
+# Vim
 bindkey -v
-
-# Pixi
-export PATH="$HOME/.pixi/bin:$PATH"
