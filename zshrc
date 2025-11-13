@@ -115,3 +115,6 @@ prompt pure
 
 # Vim
 bindkey -v
+
+# Add .local/bin to path
+export PATH="$HOME/.local/bin:$PATH"
